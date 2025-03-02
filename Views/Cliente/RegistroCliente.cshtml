@@ -1,0 +1,277 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Tixtly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #adff44;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            color: black;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header .titulo {
+            font-size: 24px;
+            font-weight: bold;
+            padding-left: 2000px;
+        }
+
+        nav button {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-form {
+            background: #0e0e0e;
+            padding: 30px;
+            border-radius: 10px;
+            width: 800px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Añadir estilos para las columnas */
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            margin-left: 30px;
+        }
+
+        /* Crear dos columnas dentro del formulario */
+        .input-column {
+            display: flex;
+            flex-direction: column;
+            width: 45%; /* Ajusta el tamaño de las columnas */
+        }
+
+        .input-container {
+            position: relative;
+            width: 35%;
+        }
+
+        .input-container input {
+            width: 220%;
+            padding: 10px 10px 10px 15px; /* Asegura que el espacio para el ícono esté al inicio */
+            border: none;
+            border-radius: 5px;
+            background: #424347;
+            color: white !important;
+            font-size: 14px;
+        }
+
+        .input-container input::placeholder {
+            color: white !important; /* Cambia el color del placeholder a blanco */
+            font-weight: bold;
+        }
+
+
+        .input-container i {
+            position: absolute;
+            left: 240px; /* Coloca el icono al final */
+            top: 50%;
+            transform: translateY(-50%);
+            color: #A8FF2A;
+        }
+
+        .checkbox {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .checkbox label {
+            font-size: 14px;
+        }
+
+        .register-btn {
+            background: #A8FF2A;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* Separa las columnas */
+        .form-registro {
+            display: flex;
+            justify-content: space-between;
+            background-color: #0e0e0e;
+        }
+        footer {
+            background: #222;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .highlight {
+            color: #A8FF2A;
+            font-weight: bold;
+        }
+
+        .acciones button {
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .btn-iniciar {
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .btn-registrar {
+            background-color: transparent;
+            border: 1px solid black;
+            border-radius: 20px;
+            color: black;
+        }
+        /* Botón */
+        .btn-registrarse {
+            background-color: #A7FF33;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 200px;
+            margin-left: 65px;
+        }
+
+        .header .logo-sitio{
+            max-width: 100%;
+            height: auto; 
+            max-height: 10px; 
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="@Url.Action("ObtenerLogoSitio", "Cliente")" alt="Logo del sitio" class="logo-sitio" style="max-height: 85px; width: auto;" />
+
+        <h2 class="titulo">Mi cuenta</h2>
+        <nav>
+            <div class="acciones">
+                <button class="btn-iniciar">INICIAR SESIÓN</button>
+                <button class="btn-registrar">REGÍSTRATE</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="register-form">
+            <h2>Regístrate</h2>
+            <p>Crea una cuenta en Tixtly para disfrutar de tus eventos favoritos</p>
+            <br />
+            <form class="form-registro">
+                <div class="input-column">
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="text" placeholder="Nombre">
+                            <i class="fa fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="email" placeholder="Correo Electrónico">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="text" placeholder="Identificación">
+                            <i class="fa fa-id-card"></i>
+                        </div>
+                    </div>
+     
+                    <div class="checkbox">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">He leído y acepto los términos y condiciones de la <a href="#" style="color: #A8FF2A;">política de protección de datos</a></label>
+                    </div>                   
+                </div>
+
+                <div class="input-column">
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="text" placeholder="Apellidos">
+                            <i class="fa fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="tel" placeholder="Teléfono">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="password" placeholder="Contraseña">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-registrarse">REGISTRARSE</button>
+                </div>
+               
+                
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="info">
+            <p>¡Somos <span class="highlight">Tixtly!</span></p>
+            <p>Transferencias Seguras</p>
+            <p>Entradas 100% digitales</p>
+        </div>
+        <div class="contact">
+            <p>Cartago, Costa Rica</p>
+            <p>servicio_alcliente@tixtly.com</p>
+            <p>+506 70-40-65-89</p>
+        </div>
+        <div class="social">
+            <p>Síguenos</p>
+        </div>
+    </footer>
+</body>
+</html>

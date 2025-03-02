@@ -1,0 +1,269 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Tixtly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('@Url.Action("ObtenerFondoInicio", "Cliente")');
+            background-size: 100%;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #adff44;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            color: black;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header .titulo {
+            font-size: 24px;
+            font-weight: bold;
+            padding-left: 2000px;
+        }
+
+        nav button {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-form {
+            background: #0e0e0e;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            height: 400px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+        }
+
+        /* Añadir estilos para las columnas */
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            margin-left: 30px;
+        }
+
+        .input-container {
+            position: relative;
+            width: 35%;
+        }
+
+        .input-container input {
+            width: 280%;
+            padding: 10px 10px 10px 15px; /* Asegura que el espacio para el ícono esté al inicio */
+            border: none;
+            border-radius: 5px;
+            background: #424347;
+            color: white !important;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .input-container input::placeholder {
+            color: white !important; /* Cambia el color del placeholder a blanco */
+            font-weight: bold;
+        }
+
+
+        .input-container i {
+            position: absolute;
+            left: 240px; /* Coloca el icono al final */
+            top: 50%;
+            transform: translateY(-50%);
+            color: #000000;
+        }
+
+        .checkbox {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .checkbox label {
+            font-size: 14px;
+        }
+
+        .register-btn {
+            background: #A8FF2A;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* Separa las columnas */
+        .form-registro {
+            display: flex;
+            justify-content: space-between;
+            background: #0e0e0e;
+            background-color: rgba(0, 0, 0, 0.0);
+            width: 100px;
+            box-sizing: border-box;            
+        }
+        footer {
+            background: #222;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .highlight {
+            color: #A8FF2A;
+            font-weight: bold;
+        }
+
+        .acciones button {
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .btn-iniciar {
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .btn-registrar {
+            background-color: transparent;
+            border: 1px solid black;
+            border-radius: 20px;
+            color: black;
+        }
+        /* Botón */
+        .btn-ingresar {
+            background-color: #424347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 5px;
+            width: 200px;
+            margin-left: 74px;
+            margin-bottom: 20px;
+        }
+
+        .header .logo-sitio{
+            max-width: 100%;
+            height: auto;
+            max-height: 10px;
+            object-fit: contain;
+        }
+
+        .texto-info{
+            display: inline;
+            margin-right: 1px;
+            font-size: 14px;
+        }
+
+        .link-registro {
+            text-decoration: none;
+            color: #adff44;
+            display: inline;
+            font-size: 14px;
+        }
+
+        .link-contraolvidada{
+            text-decoration: none;
+            color: #adff44;
+            margin-right: 100px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="@Url.Action("ObtenerLogoSitio", "Cliente")" alt="Logo del sitio" class="logo-sitio" style="max-height: 85px; width: auto;" />
+
+        <h2 class="titulo">Mi cuenta</h2>
+        <nav>
+            <div class="acciones">
+                <button class="btn-iniciar">INICIAR SESIÓN</button>
+                <button class="btn-registrar">REGÍSTRATE</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="register-form">
+            <h2>Iniciar sesión</h2>
+            <p class="texto-info">¿No tienes cuenta?</p><a href="#" class="link-registro"> Regístrate</a>
+            <br />
+            <br />
+            <form class="form-registro">
+                <div class="input-column">
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="email" placeholder="Correo Electrónico">
+                            <i class="fa fa-envelope"></i>
+                        </div>                       
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="password" placeholder="Contraseña">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
+                   
+                    <button type="submit" class="btn-ingresar">INGRESAR</button>
+
+                    <a href="#" class="link-contraolvidada">¿Olvidaste tu contraseña?</a>
+                  
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="info">
+            <p>¡Somos <span class="highlight">Tixtly!</span></p>
+            <p>Transferencias Seguras</p>
+            <p>Entradas 100% digitales</p>
+        </div>
+        <div class="contact">
+            <p>Cartago, Costa Rica</p>
+            <p>servicio_alcliente@tixtly.com</p>
+            <p>+506 70-40-65-89</p>
+        </div>
+        <div class="social">
+            <p>Síguenos</p>
+        </div>
+    </footer>
+</body>
+</html>
