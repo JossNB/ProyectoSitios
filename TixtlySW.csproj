@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Administrador\Models\" />
+    <Folder Include="Areas\Cliente\Models\" />
+  </ItemGroup>
+
 </Project>

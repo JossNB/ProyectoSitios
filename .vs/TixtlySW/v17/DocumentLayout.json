@@ -1,12 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Liz89\\source\\repos\\TixtlySW\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\liz89\\source\\repos\\tixtlysw\\views\\cliente\\registrocliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:views\\cliente\\registrocliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -14,8 +9,12 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -31,19 +30,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegistroCliente.cshtml",
-              "DocumentMoniker": "C:\\Users\\Liz89\\source\\repos\\TixtlySW\\Views\\Cliente\\RegistroCliente.cshtml",
-              "RelativeDocumentMoniker": "Views\\Cliente\\RegistroCliente.cshtml",
-              "ToolTip": "C:\\Users\\Liz89\\source\\repos\\TixtlySW\\Views\\Cliente\\RegistroCliente.cshtml",
-              "RelativeToolTip": "Views\\Cliente\\RegistroCliente.cshtml",
-              "ViewState": "AgIAAAIBAAAAAAAAAAAAAAwBAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-02T17:19:15.649Z",
-              "EditorCaption": ""
             }
           ]
         },
