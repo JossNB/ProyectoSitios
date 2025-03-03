@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TixtlySW")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9a88d7d71bdff55cb9e6aa99bdd93167a3ae989")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9ac6c2d0f68baaadd6fbdef3e018d8be6dbcf0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TixtlySW")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TixtlySW")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

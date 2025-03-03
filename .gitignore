@@ -1,2 +1,48 @@
 .vs/ 
 .vs/
+obj/
+bin/
+
+# Archivos de compilación
+bin/
+obj/
+
+# Archivos de usuario y configuraciones de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Paquetes y dependencias
+packages/
+*.nupkg
+project.lock.json
+
+# Configuraciones de depuración
+launchSettings.json
+
+# Archivos de publicación y deploy
+publish/
+app.publish/
+# Logs y dumps
+logs/
+*.log
+*.tlog
+*.dmp
+
+# Caché y archivos temporales
+*.tmp
+*.cache
+*.ide
+.DS_Store
+Thumbs.db
+
+# Archivos de Razor compilados
+**/obj/**/*.razor.vs.bin
+**/obj/**/*.razor.vs.json
+
+# Configuración de Rider y JetBrains (si usas Rider)
+.idea/
+*.sln.iml
+
