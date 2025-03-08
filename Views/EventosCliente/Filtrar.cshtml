@@ -1,0 +1,123 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TixTly - Eventos</title>
+	<link href="~/css/stylesfiltrareventos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">TIXTLY</div>
+            <input type="text" placeholder="Buscar eventos...">
+            <button class="buscar">BUSCAR</button>
+            <div class="perfil">NOMBRE</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Conciertos</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Teatro</a></li>
+                <li><a href="#">Comedia</a></li>
+                <li><a href="#">Culturales</a></li>
+                <li><a href="#">Familiares</a></li>
+                <li><a href="#">Congresos</a></li>
+                <li><a href="#">Festivales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="filtros">
+        <select>
+            <option selected hidden>Categoría</option>
+            <option>Todas</option>
+            <option>Conciertos</option>
+            <option>Deportes</option>
+            <option>Teatro</option>
+        </select>
+        <select>
+            <option selected hidden>Lugar</option>
+            <option>San José</option>
+            <option>Heredia</option>
+            <option>Alajuela</option>
+        </select>
+
+        <input type="text" id="fechaInput" placeholder="Seleccionar fecha" readonly onclick="abrirModal()">
+        <select>
+            <option selected hidden>Precio</option>
+            <option>De 10000 a 25000 colones</option>
+            <option>De 25000 a 50000 colones</option>
+            <option>De 50000 a 75000 colones</option>
+            <option>De 75000 a 100000 colones</option>
+            <option>De 100000 colones a mas</option>
+        </select>
+    </section>
+    <div id="modalFecha" class="modal">
+        <div class="modal-contenido">
+            <label>Fecha de Inicio:</label>
+            <input type="date" id="fechaInicio">
+            <label>Fecha de Fin:</label>
+            <input type="date" id="fechaFin">
+            <div class="modal-botones">
+                <button onclick="cerrarModal()">Cancelar</button>
+                <button onclick="aplicarFechas()">Aplicar</button>
+            </div>
+        </div>
+    </div>
+    <section class="eventos">
+        <h2>Eventos</h2>
+        <div class="eventos-grid">
+            <div class="evento">
+                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 1">
+
+                <button>VER EVENTO</button>
+            </div>
+            <div class="evento">
+                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 2">
+
+                <button>VER EVENTO</button>
+            </div>
+            <div class="evento">
+                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 3">
+
+                <button>VER EVENTO</button>
+            </div>
+            <div class="evento">
+                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 4">
+
+                <button>VER EVENTO</button>
+            </div>
+            <div class="evento">
+                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 5">
+
+                <button>VER EVENTO</button>
+            </div>
+            <div class="evento">
+                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 6">
+
+                <button>VER EVENTO</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>¡Somos TixTly!</p>
+        <p>Transferencias Seguras | Entradas 100% digitales</p>
+        <p>Contacto: servicio_cliente@tixtly.com | +506 70-40-65-89</p>
+    </footer>
+	<script src="~/js/filtrareventos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</body>
+</html>
+
+

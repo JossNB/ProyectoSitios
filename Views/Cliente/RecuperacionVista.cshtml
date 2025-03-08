@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesion</title>
+    <title>Recuperacion contraseña</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
@@ -56,7 +56,7 @@
             height: 100vh;
         }
 
-        .iniciosesion-form {
+        .recuperacion-form {
             background: #0e0e0e;
             background-color: rgba(37, 37, 37, 0.9);
             padding: 30px;
@@ -69,50 +69,53 @@
 
         /* Añadir estilos para las columnas */
         .input-group {
-            width: 80%; /* Los inputs deben ocupar todo el ancho disponible */
             display: flex;
             justify-content: space-between;
             margin-bottom: 30px;
-            margin-left: 40px;
+            margin-left: 30px;
         }
 
         .input-container {
             position: relative;
             width: 100%;
+            display: flex;
+            align-items: center;
         }
 
-        .input-container input {
+            .input-container input {
                 width: 100%;
-                padding: 10px 40px 10px 15px; /* Ajusta el padding derecho */
+                padding: 10px 40px 10px 15px; /* Asegura que el espacio para el ícono esté al inicio */
                 border: none;
                 border-radius: 5px;
                 background: #424347;
                 color: white !important;
                 font-size: 14px;
-        }
+                margin-left: 40px;
 
-        .input-container input::placeholder {
-            color: white !important; /* Cambia el color del placeholder a blanco */
-            font-weight: bold;
-        }
+            }
+
+                .input-container input::placeholder {
+                    color: white !important; /* Cambia el color del placeholder a blanco */
+                    font-weight: bold;
+                }
 
 
-        .input-container i {
-            position: absolute;
-            right: -40px; /* Ubica el icono dentro del campo sin superponer */
-            top: 50%;
-            transform: translateY(-50%);
-            color: #000000;
-        }
+            .input-container i {
+                position: absolute;
+                right: 10px; /* Coloca el icono al final */
+                top: 50%;
+                transform: translateY(-50%);
+                color: #000000;
+            }
 
         .checkbox {
             text-align: left;
             margin: 10px 0;
         }
 
-        .checkbox label {
-            font-size: 14px;
-        }
+            .checkbox label {
+                font-size: 14px;
+            }
 
         .register-btn {
             background: #A8FF2A;
@@ -126,14 +129,15 @@
         }
 
         /* Separa las columnas */
-        .form-iniciosesion {
+        .form-recuperacion {
             display: flex;
             justify-content: space-between;
             background: #0e0e0e;
             background-color: rgba(0, 0, 0, 0.0);
             width: 100px;
-            box-sizing: border-box;            
+            box-sizing: border-box;
         }
+
         footer {
             background: #222;
             padding: 20px;
@@ -177,18 +181,18 @@
             font-weight: bold;
             margin-top: 5px;
             width: 200px;
-            margin-left: 70px;
-            margin-bottom: 20px;
+            margin-left: 74px;
+            margin-bottom: 40px;
         }
 
-        .header .logo-sitio{
+        .header .logo-sitio {
             max-width: 100%;
             height: auto;
             max-height: 10px;
             object-fit: contain;
         }
 
-        .texto-info{
+        .texto-info {
             display: inline;
             margin-right: 1px;
             font-size: 14px;
@@ -201,11 +205,15 @@
             font-size: 14px;
         }
 
-        .link-contraolvidada{
+        .link-regresar {
             text-decoration: none;
             color: #adff44;
-            margin-right: 100px;
+            margin-right: 180px;
             font-size: 14px;
+        }
+
+        .h2titulo{
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -222,29 +230,23 @@
         </nav>
     </header>
     <main>
-        <section class="iniciosesion-form">
-            <h2>Iniciar sesión</h2>
-            <p class="texto-info">¿No tienes cuenta?</p><a href="#" class="link-registro"> Regístrate</a>
+        <section class="recuperacion-form">
+            <h2 class="h2titulo">Recuperar contraseña</h2>
+            <p class="texto-info">Te enviaremos un enlace para restablecer tu contraseña</p>
             <br />
             <br />
-            <form class="form-iniciosesion">
+            <form class="form-recuperacion">
                 <div class="input-column">
                     <div class="input-group">
                         <div class="input-container">
                             <input type="email" placeholder="Correo Electrónico">
                             <i class="fa fa-envelope"></i>
-                        </div>                       
-                    </div>
-                    <div class="input-group">
-                        <div class="input-container">
-                            <input type="password" placeholder="Contraseña">
-                            <i class="fa fa-eye"></i>
                         </div>
                     </div>
-       
-                    <button type="submit" class="btn-ingresar">INGRESAR</button>
-               
-                    <a href="#" class="link-contraolvidada">¿Olvidaste tu contraseña?</a>                 
+                  
+                    <button type="submit" class="btn-ingresar">ENVIAR</button>
+
+                    <a href="#" class="link-regresar">Regresar</a>
                 </div>
             </form>
         </section>

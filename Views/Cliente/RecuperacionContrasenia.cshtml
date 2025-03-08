@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesion</title>
+    <title>Cambio de contraseña</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
@@ -56,39 +56,42 @@
             height: 100vh;
         }
 
-        .iniciosesion-form {
+        .recuperacion-form {
             background: #0e0e0e;
-            background-color: rgba(37, 37, 37, 0.9);
             padding: 30px;
             border-radius: 10px;
-            width: 400px;
-            height: 400px;
+            width: 800px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-            box-sizing: border-box;
         }
 
         /* Añadir estilos para las columnas */
         .input-group {
-            width: 80%; /* Los inputs deben ocupar todo el ancho disponible */
             display: flex;
             justify-content: space-between;
             margin-bottom: 30px;
-            margin-left: 40px;
+            margin-left: 30px;
+        }
+
+        /* Crear dos columnas dentro del formulario */
+        .input-column {
+            display: flex;
+            flex-direction: column;
+            width: 45%; /* Ajusta el tamaño de las columnas */
         }
 
         .input-container {
             position: relative;
-            width: 100%;
+            width: 35%;
         }
 
         .input-container input {
-                width: 100%;
-                padding: 10px 40px 10px 15px; /* Ajusta el padding derecho */
-                border: none;
-                border-radius: 5px;
-                background: #424347;
-                color: white !important;
-                font-size: 14px;
+            width: 220%;
+            padding: 10px 10px 10px 15px; /* Asegura que el espacio para el ícono esté al inicio */
+            border: none;
+            border-radius: 5px;
+            background: #424347;
+            color: white !important;
+            font-size: 14px;
         }
 
         .input-container input::placeholder {
@@ -99,10 +102,10 @@
 
         .input-container i {
             position: absolute;
-            right: -40px; /* Ubica el icono dentro del campo sin superponer */
+            left: 240px; /* Coloca el icono al final */
             top: 50%;
             transform: translateY(-50%);
-            color: #000000;
+            color: #A8FF2A;
         }
 
         .checkbox {
@@ -126,13 +129,10 @@
         }
 
         /* Separa las columnas */
-        .form-iniciosesion {
+        .form-recuperacion {
             display: flex;
             justify-content: space-between;
-            background: #0e0e0e;
-            background-color: rgba(0, 0, 0, 0.0);
-            width: 100px;
-            box-sizing: border-box;            
+            background-color: #0e0e0e;
         }
         footer {
             background: #222;
@@ -167,18 +167,17 @@
             color: black;
         }
         /* Botón */
-        .btn-ingresar {
-            background-color: #424347;
-            color: white;
+        .btn-registrarse {
+            background-color: #A7FF33;
+            color: black;
             border: none;
             padding: 10px 20px;
             border-radius: 25px;
             cursor: pointer;
             font-weight: bold;
-            margin-top: 5px;
+            margin-top: 20px;
             width: 200px;
-            margin-left: 70px;
-            margin-bottom: 20px;
+            margin-left: 65px;
         }
 
         .header .logo-sitio{
@@ -187,25 +186,30 @@
             max-height: 10px;
             object-fit: contain;
         }
-
-        .texto-info{
-            display: inline;
-            margin-right: 1px;
-            font-size: 14px;
+        /* Estilo de la lista sin puntos */
+        .card-body ul {
+            padding-left: 0;
+            margin: 0;
+            list-style: none; /* Elimina las viñetas de la lista */
+            margin-bottom: 13px;
         }
 
-        .link-registro {
-            text-decoration: none;
-            color: #adff44;
-            display: inline;
-            font-size: 14px;
+        .card-body li {
+            font-size: 1rem;
+            margin-bottom: 12px; /* Espacio entre los elementos */
+            position: relative;
         }
 
-        .link-contraolvidada{
-            text-decoration: none;
-            color: #adff44;
-            margin-right: 100px;
+            /* Elimina cualquier ícono o marcador antes de los items */
+            .card-body li::before {
+                content: none; /* Elimina cualquier contenido o marcador */
+            }
+
+        .card-body li {
+            font-size: 1rem;
+            color: white;
             font-size: 14px;
+            padding-left: 15px; /* Añadir un poco de espacio a la izquierda */
         }
     </style>
 </head>
@@ -222,29 +226,49 @@
         </nav>
     </header>
     <main>
-        <section class="iniciosesion-form">
-            <h2>Iniciar sesión</h2>
-            <p class="texto-info">¿No tienes cuenta?</p><a href="#" class="link-registro"> Regístrate</a>
+        <section class="recuperacion-form">
+            <h2>Recuperación de contraseña</h2>
             <br />
-            <br />
-            <form class="form-iniciosesion">
+            <form class="form-recuperacion">
                 <div class="input-column">
                     <div class="input-group">
                         <div class="input-container">
-                            <input type="email" placeholder="Correo Electrónico">
-                            <i class="fa fa-envelope"></i>
-                        </div>                       
-                    </div>
-                    <div class="input-group">
-                        <div class="input-container">
-                            <input type="password" placeholder="Contraseña">
+                            <input type="password" placeholder="Contraseña temporal">
                             <i class="fa fa-eye"></i>
                         </div>
                     </div>
-       
-                    <button type="submit" class="btn-ingresar">INGRESAR</button>
-               
-                    <a href="#" class="link-contraolvidada">¿Olvidaste tu contraseña?</a>                 
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="password" placeholder="Nueva contraseña">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="password" placeholder="Confirmar contraseña">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-registrarse">GUARDAR CAMBIOS</button>
+                </div>
+
+                <div class="input-column">
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <h5 class="card-title">La contraseña debe cumplir con:</h5>
+                            <ul>
+                                <li>Entre 8 y 10 caracteres</li>
+                                <li>Debe contener mayúsculas, minúsculas, números y un carácter especial</li>
+                                <li>No debe repetir contraseñas anteriores</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+                                     
+                    <button type="submit" class="btn-registrarse">CANCELAR</button>
                 </div>
             </form>
         </section>
@@ -266,3 +290,4 @@
     </footer>
 </body>
 </html>
+
