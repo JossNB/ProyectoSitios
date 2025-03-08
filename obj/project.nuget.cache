@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m78ClJxGcss=",
+  "dgSpecHash": "G2/Uq+UcfpI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Katherine\\Source\\Repos\\ProyectoSitios\\TixtlySW.csproj",
+  "projectFilePath": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\TixtlySW.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Katherine\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Katherine\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

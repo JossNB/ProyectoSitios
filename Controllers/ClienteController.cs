@@ -79,7 +79,14 @@ namespace TixtlySW.Controllers
             return NotFound(); // Si no hay imagen, devuelve un error 404
         }
 
+        public IActionResult RecuperacionVista()
+        {
+            return View();
+        }
 
-
+        public IActionResult RecuperacionContrasenia()
+        {
+            return View();
+        }
     }
 }
