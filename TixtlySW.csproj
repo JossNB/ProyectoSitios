@@ -11,8 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Administrador\Models\" />
-    <Folder Include="Areas\Cliente\Models\" />
+    <Folder Include="Views\Administrador\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Cliente\InicioSesion.cshtml" />
+    <None Include="Views\Cliente\RegistroCliente.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
   </ItemGroup>
 
 </Project>
