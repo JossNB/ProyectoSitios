@@ -1,0 +1,62 @@
+﻿@model TixtlySW.Models.EventoModel
+
+@{
+    ViewData["Title"] = "Detalles del Evento";
+    Layout = null; // Puedes eliminar esta línea si usas un layout
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/css/stylevereventoid.css" rel="stylesheet" /> <!-- Asegúrate de que la ruta del CSS sea correcta -->
+</head>
+<body>
+    <div class="evento-container">
+        <header class="evento-header">
+            <h1>@Model.Titulo</h1>
+            <h2>@Model.Descripcion</h2>
+        </header>
+
+        <section class="evento-info">
+            <p><strong>Fecha de inicio:</strong> @Model.FechaInicio.ToString("dd/MM/yyyy HH:mm")</p>
+            <p><strong>Fecha de fin:</strong> @Model.FechaFin.ToString("dd/MM/yyyy HH:mm")</p>
+            <p><strong>Lugar:</strong> @Model.NombreLugar</p>
+            <p><strong>Dirección:</strong> @Model.DireccionLugar</p>
+        </section>
+
+        <section class="disponibilidad">
+            <p><strong>Estado:</strong> @Model.Estado</p>
+        </section>
+
+        <section class="imagen-evento">
+            @if (!string.IsNullOrEmpty(Model.ImagenUrl))
+            {
+                <img src="@Model.ImagenUrl" alt="Imagen del evento" style="max-width: 100%; height: auto;" />
+            }
+            else if (Model.Imagen != null && Model.Imagen.Length > 0)
+            {
+                string base64String = Convert.ToBase64String(Model.Imagen);
+                <img src="data:image/jpeg;base64,@base64String" alt="Imagen del evento" style="max-width: 100%; height: auto;" />
+            }
+            else
+            {
+                <p>No hay imagen disponible.</p>
+            }
+        </section>
+
+        <section class="categoria-evento">
+            <p><strong>Categoría:</strong> @Model.CategoriaID</p> <!-- Usar CategoriaID -->
+        </section>
+
+        <footer class="contacto-footer">
+            <h3>Contacto</h3>
+            <p><strong>Campus Costa Rica</strong></p>
+            <p><a href="http://www.ba.uba.com/obligacion">www.ba.uba.com/obligacion</a></p>
+        </footer>
+    </div>
+</body>
+</html>
+  

@@ -12,7 +12,7 @@ namespace TixtlySW.Areas.Cliente.Controllers
         {
             //Mostrara todos los datos 
             //var olista= _EventoDatos.Listar();
-            //return View(//olista//);
+            //return (olista);
             return View();
 
         }
@@ -20,7 +20,25 @@ namespace TixtlySW.Areas.Cliente.Controllers
         public IActionResult Filtrar()
         {
             //Mostrara datos filtrados 
-            return View();
+            var olista = _EventoDatos.Listar();
+            return View(olista);
+        }
+    
+
+
+        public IActionResult ObtenerEventoid(int eventoId)
+        {
+        // Llamar al método BuscarEventoporId
+        var evento = _EventoDatos.BuscarEventoporId(eventoId);
+
+        if (evento == null)
+        {
+            // Si no se encuentra el evento, puedes redirigir a una vista de error o mostrar un mensaje
+            return NotFound(); // Retorna un error 404
+        }
+
+        // Pasar el evento encontrado a la vista
+        return View(evento);
         }
     }
 }
