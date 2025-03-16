@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    color: rgb(7, 6, 6);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('https://img.freepik.com/foto-gratis/grupo-personas-cerca-escenario-concierto_250224-175.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #A4FF52;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    background-color: #A4FF52;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    top: 200px;
+}
+
+    footer p {
+        margin: 5px;
+        color: white;
+    }
+
+.green-btn {
+    background-color: #6CFF6D;
+    color: black;
+}
+
+.white-btn {
+    background-color: white;
+    color: black;
+}
+
+.panel-info {
+    left: 48%;
+    top: 30px;
+    background-color: #413f3f;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: left;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    height: auto;
+    width: 700px;
+    color: white;
+}
+
+    .panel-info label {
+        display: block;
+        margin-top: 10px;
+    }
+
+.panel-Image {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) !important;
+    background-color: #fafcfa !important;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+    .panel-Image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contenedor-estado {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    right: -90px;
+    color: white;
+}
+
+.fila-Disponible, .fila-NoD {
+    display: flex;
+    align-items: center; /* Alinea los íconos y el texto verticalmente */
+    gap: 5px; /* Espacio entre el punto y el texto */
+}
+
+.confirm {
+    background-color: #6CFF6D;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 200px;
+    position: relative;
+    right: -90px;
+    top: 5px;
+}
+
+/* Modificaciones para la tabla */
+.tabla {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) !important;
+    width: 720px;
+    height: 250px; /* Altura fija para la tabla */
+    position: relative;
+    top: 100px;
+    left: 48%;
+    background-color: rgb(253, 251, 251);
+    overflow-y: auto; /* Hace que el contenido sea scrollable verticalmente */
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 2px dotted black;
+}
+
+    .fila:last-child {
+        border-bottom: none;
+    }
+
+.encabezado {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 2px solid black; /* Línea más gruesa para el encabezado */
+}
+
+    .encabezado span {
+        flex: 1; /* Distribuye el espacio equitativamente */
+        text-align: center; /* Centra el texto en cada columna */
+    }
+
+.fila span {
+    flex: 1; /* Distribuye el espacio equitativamente */
+    text-align: center; /* Centra el texto en cada columna */
+}
+
+/* Estilos específicos para la columna de disponibilidad */
+.fila .disponibilidad {
+    flex: 0 0 50px; /* Ancho fijo para la columna de disponibilidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    width: 12px; /* Tamaño fijo para el punto */
+    height: 12px; /* Tamaño fijo para el punto */
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0; /* Evita que el punto se reduzca */
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: limegreen;
+}

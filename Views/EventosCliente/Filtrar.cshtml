@@ -21,7 +21,11 @@
 <body>
     <header>
         <div class="header-top">
-            <img id="logo" src="/img/logo.jpeg" alt="Tixtly" style="width: 85px; height: auto;">
+            <!-- Logo con enlace a Index.cshtml -->
+            <a asp-controller="Home" asp-action="Index">
+                <img id="logo" src="/img/logo.jpeg" alt="Tixtly" style="width: 85px; height: auto;">
+            </a>
+
             <input type="text" placeholder="Buscar eventos...">
             <button class="buscar">BUSCAR</button>
             <div class="perfil">NOMBRE</div>
@@ -41,36 +45,47 @@
     </header>
 
     <section class="filtros">
-        <select>
-            <option selected hidden>Categoría</option>
-            <option>Todas</option>
-            <option>Conciertos</option>
-            <option>Deportes</option>
-            <option>Teatro</option>
-            <option>Comedia</option>
-            <option>Culturales</option>
-            <option>Familiares</option>
-            <option>Congresos</option>
-            <option>Festivales</option>
-        </select>
-        <select>
-            <option selected hidden>Lugar</option>
-            <option>San José</option>
-            <option>Heredia</option>
-            <option>Alajuela</option>
-        </select>
+        <form id="formFiltros">
+            <select id="filtroCategoria" name="categoria">
+                <option selected hidden>Categoría</option>
+                <option value="">Todas</option>
+                <option value="21">Conciertos</option>
+                <option value="31">Deportes</option>
+                <option value="32">Teatro</option>
+                <option value="33">Comedia</option>
+                <option value="34">Culturales</option>
+                <option value="35">Familiares</option>
+                <option value="36">Congresos</option>
+                <option value="37">Festivales</option>
+            </select>
+            <select id="filtroLugar">
+                <option selected hidden>Lugar</option>
+                <option value="">Todos</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Heredia">Heredia</option>
+                <option value="Alajuela">Alajuela</option>
+                <option value="Cartago">Cartago</option>
+                <option value="Limón">Limón</option>
+                <option value="Guanacaste">Guanacaste</option>
+                <option value="Puntarenas">Puntarenas</option>
+            </select>
 
-        <input type="text" id="fechaInput" placeholder="Seleccionar fecha" readonly onclick="abrirModal()">
-        <select>
-            <option selected hidden>Precio</option>
-            <option>De 10000 a 25000 colones</option>
-            <option>De 25000 a 50000 colones</option>
-            <option>De 50000 a 75000 colones</option>
-            <option>De 75000 a 100000 colones</option>
-            <option>De 100000 colones a mas</option>
-        </select>
-        <button class="buscar-filtros">Buscar</button>
+            <input type="text" id="fechaInput" placeholder="Seleccionar fecha" readonly onclick="abrirModal()">
+            <select id="filtroPrecio">
+                <option selected hidden>Precio</option>
+                <option value="De 10000 a 25000 colones">De 10000 a 25000 colones</option>
+                <option value="De 25000 a 50000 colones">De 25000 a 50000 colones</option>
+                <option value="De 50000 a 75000 colones">De 50000 a 75000 colones</option>
+                <option value="De 75000 a 100000 colones">De 75000 a 100000 colones</option>
+                <option value="De 100000 colones a mas">De 100000 colones a mas</option>
+            </select>
+            <!-- Botón para activar la funcion de buscar del js -->
+            <button type="button" class="buscar-filtros">Buscar</button>
+            <!-- Botón para reestablecer los filtros -->
+            <button type="button" class="reestablecer-filtros">Reestablecer</button>
+        </form>
     </section>
+
     <div id="modalFecha" class="modal">
         <div class="modal-contenido">
             <label>Fecha de Inicio:</label>

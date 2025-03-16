@@ -13,6 +13,8 @@ namespace TixtlySW.Models
         public int CantidadMaximaCompra { get; set; }
         public int IDsector { get; set; }
 
+        public string NombreSector { get; set; }
+
 
     }
 }

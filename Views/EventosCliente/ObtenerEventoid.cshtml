@@ -1,62 +1,115 @@
-﻿@model TixtlySW.Models.EventoModel
-
+﻿@model TixtlySW.Models.EventoBoletoViewModel
 @{
     ViewData["Title"] = "Detalles del Evento";
     Layout = null; // Puedes eliminar esta línea si usas un layout
 }
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"]</title>
-    <link href="~/css/stylevereventoid.css" rel="stylesheet" /> <!-- Asegúrate de que la ruta del CSS sea correcta -->
+    <title>TixTly - Eventos</title>
+	<link href="~/css/styleinfoboletos.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="evento-container">
-        <header class="evento-header">
-            <h1>@Model.Titulo</h1>
-            <h2>@Model.Descripcion</h2>
-        </header>
+    <header>
+        <div class="header-top">
+            <!-- Logo con enlace a Index.cshtml -->
+            <a asp-controller="Home" asp-action="Index">
+                <img id="logo" src="/img/logo.jpeg" alt="Tixtly" style="width: 85px; height: auto;">
+            </a>
 
-        <section class="evento-info">
-            <p><strong>Fecha de inicio:</strong> @Model.FechaInicio.ToString("dd/MM/yyyy HH:mm")</p>
-            <p><strong>Fecha de fin:</strong> @Model.FechaFin.ToString("dd/MM/yyyy HH:mm")</p>
-            <p><strong>Lugar:</strong> @Model.NombreLugar</p>
-            <p><strong>Dirección:</strong> @Model.DireccionLugar</p>
-        </section>
-
-        <section class="disponibilidad">
-            <p><strong>Estado:</strong> @Model.Estado</p>
-        </section>
-
-        <section class="imagen-evento">
-            @if (!string.IsNullOrEmpty(Model.ImagenUrl))
-            {
-                <img src="@Model.ImagenUrl" alt="Imagen del evento" style="max-width: 100%; height: auto;" />
-            }
-            else if (Model.Imagen != null && Model.Imagen.Length > 0)
-            {
-                string base64String = Convert.ToBase64String(Model.Imagen);
-                <img src="data:image/jpeg;base64,@base64String" alt="Imagen del evento" style="max-width: 100%; height: auto;" />
-            }
-            else
-            {
-                <p>No hay imagen disponible.</p>
-            }
-        </section>
-
-        <section class="categoria-evento">
-            <p><strong>Categoría:</strong> @Model.CategoriaID</p> <!-- Usar CategoriaID -->
-        </section>
-
-        <footer class="contacto-footer">
-            <h3>Contacto</h3>
-            <p><strong>Campus Costa Rica</strong></p>
-            <p><a href="http://www.ba.uba.com/obligacion">www.ba.uba.com/obligacion</a></p>
-        </footer>
+            <input type="text" placeholder="Buscar eventos...">
+            <button class="buscar">BUSCAR</button>
+            <div class="perfil">NOMBRE</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Conciertos</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Teatro</a></li>
+                <li><a href="#">Comedia</a></li>
+                <li><a href="#">Culturales</a></li>
+                <li><a href="#">Familiares</a></li>
+                <li><a href="#">Congresos</a></li>
+                <li><a href="#">Festivales</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="panel-Image">
+        <img src="@Model.Evento.ImagenUrl" alt="@Model.Evento.Titulo">
     </div>
+
+    <div class="panel-info">
+        <h3>@Model.Evento.Titulo</h3>
+        <label>
+        </label>
+        @Model.Evento.FechaInicio
+        <label>
+
+        </label>
+        @Model.Evento.NombreLugar
+        <label>
+
+        </label>
+       @Model.Evento.DireccionLugar
+        <label>
+
+        </label>
+    </div>
+
+    <div class="tabla">
+        <!-- Encabezado de la tabla -->
+        <div class="fila encabezado">
+            <span>Sector</span>
+            <span>Precio</span>
+            <span>Disponibilidad</span>
+        </div>
+
+        <!-- Verificar si hay boletos disponibles -->
+        @if (Model.Boletos == null || !Model.Boletos.Any())
+        {
+            <div class="fila">
+                <span>No hay boletos disponibles para este evento.</span>
+            </div>
+        }
+        else
+        {
+            <!-- Filas dinámicas generadas desde la lista Boletos -->
+            @foreach (var boleto in Model.Boletos)
+            {
+                <div class="fila">
+                    <span><b>@boleto.NombreSector</b></span>
+                    <span>₡ @boleto.Precio.ToString("N2")</span>
+                    <span class="disponibilidad">
+                        <span class="dot @(boleto.Disponibles > 0 ? "green" : "red")"></span>
+                    </span>
+                </div>
+            }
+        }
+    </div>
+
+    <div class="contenedor-estado">
+        <div class="fila-Disponible">
+            <span class="dot green"></span>
+            <label>Disponible</label>
+        </div>
+        <div class="fila-NoD">
+            <span class="dot red"></span>
+            <label>No Disponible</label>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="confirm">COMPRAR BOLETOS</button>
+    </div>
+
+
+
+    <footer>
+        <p>¡Somos TixTly!</p>
+        <p>Transferencias Seguras | Entradas 100% digitales</p>
+        <p>Contacto: servicio_cliente@tixtly.com | +506 70-40-65-89</p>
+    </footer>
 </body>
 </html>
-  

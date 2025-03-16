@@ -22,23 +22,104 @@ namespace TixtlySW.Areas.Cliente.Controllers
             //Mostrara datos filtrados 
             var olista = _EventoDatos.Listar();
             return View(olista);
-        }
-    
+        }//TERMINA EL FILRAR 
 
 
-        public IActionResult ObtenerEventoid(int eventoId)
+
+		[HttpPost]
+		public IActionResult Filtrar([FromBody] FiltrosBusqueda filtros)
+		{
+			try
+			{
+				// Validar los filtros
+				if (filtros == null)
+				{
+					return BadRequest("Los filtros no pueden ser nulos.");
+				}
+
+				Console.WriteLine("Filtros recibidos:");
+				Console.WriteLine($"Categoria: {filtros.Categoria}");
+				Console.WriteLine($"Lugar: {filtros.Lugar}");
+				Console.WriteLine($"FechaInicio: {filtros.FechaInicio}");
+				Console.WriteLine($"FechaFin: {filtros.FechaFin}");
+				Console.WriteLine($"Precio: {filtros.Precio}");
+
+				// Convertir las fechas a DateTime o NULL
+				DateTime? fechaInicio = null;
+				DateTime? fechaFin = null;
+
+				if (!string.IsNullOrEmpty(filtros.FechaInicio))
+				{
+					fechaInicio = DateTime.Parse(filtros.FechaInicio);
+				}
+
+				if (!string.IsNullOrEmpty(filtros.FechaFin))
+				{
+					fechaFin = DateTime.Parse(filtros.FechaFin);
+				}
+
+				// Crear un objeto FiltrosBusqueda con los valores correctos
+				var filtrosBusqueda = new FiltrosBusqueda
+				{
+					Categoria = filtros.Categoria,
+					Lugar = filtros.Lugar,
+					FechaInicio = fechaInicio?.ToString("yyyy-MM-dd"), // Convertir a string en formato ISO
+					FechaFin = fechaFin?.ToString("yyyy-MM-dd"), // Convertir a string en formato ISO
+					Precio = filtros.Precio
+				};
+
+				// Llamar al método de la capa de datos
+				var resultados = _EventoDatos.FiltrarEventos(filtros);
+
+				Console.WriteLine($"Número de resultados: {resultados.Count}");
+
+				// Devolver los resultados en formato JSON
+				return Json(resultados);
+			}
+			catch (Exception ex)
+			{
+				// Registrar el error
+				Console.Error.WriteLine($"Error en Filtrar: {ex.Message}");
+				return StatusCode(500, "Ocurrió un error interno al procesar la solicitud.");
+			}
+		}//termina filtrar eventos 
+
+		public class FiltrosBusqueda
+		{
+			public int? Categoria { get; set; } // Debe ser  nullable (int?)
+			public string Lugar { get; set; }
+			public string FechaInicio { get; set; } // Usar string para manejar fechas como texto
+			public string FechaFin { get; set; } // Usar string para manejar fechas como texto
+			public string Precio { get; set; }
+		}//TERMINA LA CLASE FILTRO
+
+
+		public IActionResult ObtenerEventoid(int eventoId)
         {
-        // Llamar al método BuscarEventoporId
-        var evento = _EventoDatos.BuscarEventoporId(eventoId);
+            //Obtener el evento (un solo registro)
+            var evento = _EventoDatos.BuscarEventoporId(eventoId);
 
-        if (evento == null)
-        {
-            // Si no se encuentra el evento, puedes redirigir a una vista de error o mostrar un mensaje
-            return NotFound(); // Retorna un error 404
-        }
+            if (evento == null)
+            {
+                // Si no se encuentra el evento, puedes redirigir a una vista de error o mostrar un mensaje
+                return NotFound(); // Retorna un error 404
+            }
 
-        // Pasar el evento encontrado a la vista
-        return View(evento);
-        }
-    }
-}
+            // Obtener la lista de boletos asociados al evento
+            var boletos = _EventoDatos.BuscarBoletoEventoporId(eventoId);
+
+            // Creas una instancia del ViewModel y asignas los datos
+            var viewModel = new EventoBoletoViewModel
+            {
+                Evento = evento,
+                Boletos = boletos
+            };
+
+            // Pasas el ViewModel a la vista
+            return View(viewModel);
+        }//termina el metodo obtenerEventoId
+
+
+
+    }//termina la clase publica 
+}//termina el controller 
