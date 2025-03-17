@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\wwwroot\\css\\buscarboletostyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:wwwroot\\css\\buscarboletostyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\views\\eventoscliente\\buscarboleto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:views\\eventoscliente\\buscarboleto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\datos\\eventodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:datos\\eventodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\controllers\\eventosclientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:controllers\\eventosclientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\models\\cantidadsectoresasientos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:models\\cantidadsectoresasientos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\models\\eventoboletoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:models\\eventoboletoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\models\\eventoboletoconsectoresviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:models\\eventoboletoconsectoresviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\wwwroot\\css\\buscarboletostyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:wwwroot\\css\\buscarboletostyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,92 +43,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "buscarboletostyle.css",
-              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\wwwroot\\css\\buscarboletostyle.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\buscarboletostyle.css",
-              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\wwwroot\\css\\buscarboletostyle.css",
-              "RelativeToolTip": "wwwroot\\css\\buscarboletostyle.css",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAYwKIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-17T03:40:57.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CantidadSectoresAsientos.cs",
-              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Models\\CantidadSectoresAsientos.cs",
-              "RelativeDocumentMoniker": "Models\\CantidadSectoresAsientos.cs",
-              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Models\\CantidadSectoresAsientos.cs",
-              "RelativeToolTip": "Models\\CantidadSectoresAsientos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T03:34:16.204Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EventoBoletoViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Models\\EventoBoletoViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\EventoBoletoViewModel.cs",
-              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Models\\EventoBoletoViewModel.cs",
-              "RelativeToolTip": "Models\\EventoBoletoViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T03:10:48.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EventoBoletoConSectoresViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Models\\EventoBoletoConSectoresViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\EventoBoletoConSectoresViewModel.cs",
-              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Models\\EventoBoletoConSectoresViewModel.cs",
-              "RelativeToolTip": "Models\\EventoBoletoConSectoresViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T03:10:08.811Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EventoDatos.cs",
-              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Datos\\EventoDatos.cs",
-              "RelativeDocumentMoniker": "Datos\\EventoDatos.cs",
-              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Datos\\EventoDatos.cs",
-              "RelativeToolTip": "Datos\\EventoDatos.cs",
-              "ViewState": "AQIAAPwAAAAAAAAAAAAowA0BAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T03:00:34.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EventosClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Controllers\\EventosClienteController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EventosClienteController.cs",
-              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Controllers\\EventosClienteController.cs",
-              "RelativeToolTip": "Controllers\\EventosClienteController.cs",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAmwIIAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T03:00:04.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "BuscarBoleto.cshtml",
               "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Views\\EventosCliente\\BuscarBoleto.cshtml",
               "RelativeDocumentMoniker": "Views\\EventosCliente\\BuscarBoleto.cshtml",
               "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Views\\EventosCliente\\BuscarBoleto.cshtml",
               "RelativeToolTip": "Views\\EventosCliente\\BuscarBoleto.cshtml",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAEAAAAAtAAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAAAGMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T02:57:22.735Z",
+              "WhenOpened": "2025-03-17T05:30:35.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "buscarboletostyle.css",
+              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\wwwroot\\css\\buscarboletostyle.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\buscarboletostyle.css",
+              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\wwwroot\\css\\buscarboletostyle.css",
+              "RelativeToolTip": "wwwroot\\css\\buscarboletostyle.css",
+              "ViewState": "AQIAAIgAAAAAAAAAAAAAwKMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-17T05:29:43.288Z",
               "EditorCaption": ""
             }
           ]
