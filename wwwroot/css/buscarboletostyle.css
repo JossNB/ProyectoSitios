@@ -1,0 +1,150 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #A4FF52;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #222;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    color: #222;
+    top: 0;
+    padding: 10px;
+    background-color: #A4FF52;
+    left: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.evento {
+    background-color: #A4FF52;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+}
+
+    .evento img {
+        width: 100%;
+    }
+
+footer {
+    background-color: #222;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    width: 80%;
+    max-width: 600px;
+}
+
+.escenario {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.sectores {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.sector {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    width: 45%;
+}
+
+.asientos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.asiento {
+    background-color: #A4FF52;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+    .asiento.seleccionado {
+        background-color: #222;
+        color: white;
+    }
+
+.modal-botones {
+    margin-top: 20px;
+}
+
+    .modal-botones button {
+        margin: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #A4FF52;
+        color: black;
+    }
+
+        .modal-botones button:hover {
+            background-color: #222;
+            color: white;
+        }

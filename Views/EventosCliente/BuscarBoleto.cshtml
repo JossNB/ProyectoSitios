@@ -1,0 +1,98 @@
+﻿@model TixtlySW.Models.EventoBoletoConSectoresViewModel
+
+@{
+    Layout = null;
+    var sectoresAsientos = ViewBag.SectoresAsientos as List<CantidadSectoresAsientos>;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Buscar Boleto</title>
+    <link href="~/css/buscarboletostyle.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a asp-controller="Home" asp-action="Index">
+                <img id="logo" src="/img/logo.jpeg" alt="Tixtly" style="width: 85px; height: auto;">
+            </a>
+            <input type="text" placeholder="Buscar eventos...">
+            <button class="buscar">BUSCAR</button>
+            <div class="perfil">NOMBRE</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Conciertos</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Teatro</a></li>
+                <li><a href="#">Comedia</a></li>
+                <li><a href="#">Culturales</a></li>
+                <li><a href="#">Familiares</a></li>
+                <li><a href="#">Congresos</a></li>
+                <li><a href="#">Festivales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <div class="eventos-grid">
+            <div class="evento">
+                <h2>@Model.Evento.Titulo</h2>
+                <p>@Model.Evento.FechaFin</p>
+                <p>Lugar: @Model.Evento.NombreLugar</p>
+                <button class="seleccionar-sector">Seleccionar Sector</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para seleccionar asientos -->
+    <div id="modalAsientos" class="modal">
+        <div class="modal-contenido">
+            <h2>Selecciona tu asiento</h2>
+            <div class="escenario">
+                <p>Escenario</p>
+            </div>
+            <div class="sectores">
+                @if (sectoresAsientos != null && sectoresAsientos.Any())
+                {
+                    foreach (var sector in sectoresAsientos)
+                    {
+                        <div class="sector" data-sector="@sector.IDSector">
+                            <h3>Sector @sector.IDSector</h3>
+                            <div class="asientos" id="asientos-@sector.IDSector">
+                                @for (int fila = 1; fila <= sector.CantidadFilas; fila++)
+                                {
+                                    <div class="fila">
+                                        @for (int asiento = 1; asiento <= sector.CantidadAsientos / sector.CantidadFilas; asiento++)
+                                        {
+                                            <div class="asiento" data-asiento="@asiento">@asiento</div>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No hay sectores disponibles.</p>
+                }
+            </div>
+            <div class="modal-botones">
+                <button id="cerrarModal">Cerrar</button>
+                <button id="confirmarAsiento">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>¡Somos TixTly!</p>
+        <p>Transferencias Seguras | Entradas 100% digitales</p>
+        <p>Contacto: servicio_cliente@tixtly.com | +506 70-40-65-89</p>
+    </footer>
+    <script src="~/js/buscarboletoscript.js"></script>
+</body>
+</html>

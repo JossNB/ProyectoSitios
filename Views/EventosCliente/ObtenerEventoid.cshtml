@@ -101,11 +101,9 @@
     </div>
 
     <div class="buttons">
-        <button class="confirm">COMPRAR BOLETOS</button>
+        <a asp-action="BuscarBoleto" asp-route-eventoId="@Model.Evento.EventoID" class="confirm">COMPRAR BOLETOS</a>
+        <!-- <button class="confirm">COMPRAR BOLETOS</button> -->
     </div>
-
-
-
     <footer>
         <p>¡Somos TixTly!</p>
         <p>Transferencias Seguras | Entradas 100% digitales</p>

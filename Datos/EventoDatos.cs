@@ -241,5 +241,50 @@ namespace TixtlySW.Datos
 		}//termina el filtrar eventos 
 
 
-	}
+        //evento para obtener la cantidad de sectores y asientos y pintar el html de manera dinamica 
+        public List<CantidadSectoresAsientos> ObtenerBloquesyAsientos(int eventoID)
+        {
+            var listaSectoresAsientos = new List<CantidadSectoresAsientos>();
+
+            var cn = new Conexion();
+
+            using (var conexion = new SqlConnection(cn.getCadenaSQL()))
+            {
+                try
+                {
+                    // Abrir la conexión y ejecutar el procedimiento almacenado
+                    conexion.Open();
+                    SqlCommand cmd = new SqlCommand("ObtenerBloquesyAsientos", conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Agregar el parámetro @EventoID
+                    cmd.Parameters.AddWithValue("@EventoID", eventoID);
+
+                    // Obtener la información
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            listaSectoresAsientos.Add(new CantidadSectoresAsientos()
+                            {
+                                IDSector = Convert.ToInt32(dr["IDSector"]), // Verifica que el nombre sea correcto
+                                CantidadAsientos = Convert.ToInt32(dr["CantidadAsientos"]), // Verifica que el nombre sea correcto
+                                CantidadFilas = Convert.ToInt32(dr["CantidadFilas"]) // Verifica que el nombre sea correcto
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Registrar el error para depuración
+                    Console.WriteLine("Error en ObtenerBloquesyAsientos: " + ex.Message);
+                    throw; // Relanzar la excepción
+                }
+            }
+
+            return listaSectoresAsientos;
+        }//termina el buscar cantidad de bloques y asientos 
+
+
+    }
 }

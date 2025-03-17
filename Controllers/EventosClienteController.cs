@@ -119,6 +119,42 @@ namespace TixtlySW.Areas.Cliente.Controllers
             return View(viewModel);
         }//termina el metodo obtenerEventoId
 
+        public IActionResult BuscarBoleto(int eventoId)
+        {
+            try
+            {
+                // Obtener el evento (un solo registro)
+                var evento = _EventoDatos.BuscarEventoporId(eventoId);
+
+                if (evento == null)
+                {
+                    // Si no se encuentra el evento, puedes redirigir a una vista de error o mostrar un mensaje
+                    return NotFound(); // Retorna un error 404
+                }
+
+                // Obtener la lista de boletos asociados al evento
+                var boletos = _EventoDatos.BuscarBoletoEventoporId(eventoId);
+
+                // Obtener la cantidad de sectores y filas usando el procedimiento almacenado
+                var sectoresAsientos = _EventoDatos.ObtenerBloquesyAsientos(eventoId);
+
+                // Crear una instancia del ViewModel adicional y asignar los datos
+                var viewModel = new EventoBoletoConSectoresViewModel
+                {
+                    Evento = evento,
+                    Boletos = boletos,
+                    SectoresAsientos = sectoresAsientos
+                };
+
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                // Registrar el error para depuración
+                Console.WriteLine("Error en BuscarBoleto: " + ex.Message);
+                return StatusCode(500, "Ocurrió un error interno. Por favor, inténtelo de nuevo más tarde.");
+            }
+        }
 
 
     }//termina la clase publica 
