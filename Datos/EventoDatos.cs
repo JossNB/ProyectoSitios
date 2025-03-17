@@ -267,9 +267,11 @@ namespace TixtlySW.Datos
                         {
                             listaSectoresAsientos.Add(new CantidadSectoresAsientos()
                             {
-                                IDSector = Convert.ToInt32(dr["IDSector"]), // Verifica que el nombre sea correcto
-                                CantidadAsientos = Convert.ToInt32(dr["CantidadAsientos"]), // Verifica que el nombre sea correcto
-                                CantidadFilas = Convert.ToInt32(dr["CantidadFilas"]) // Verifica que el nombre sea correcto
+                                IDSector = Convert.ToInt32(dr["IDSector"]),  
+                                CantidadAsientos = Convert.ToInt32(dr["CantidadAsientos"]), 
+                                CantidadFilas = Convert.ToInt32(dr["CantidadFilas"]),  
+                                NombreBloque = dr["NombreBloque"].ToString(),
+                                Precio = Convert.ToDecimal(dr["Precio"])
                             });
                         }
                     }

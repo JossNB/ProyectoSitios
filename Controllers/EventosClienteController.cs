@@ -128,7 +128,7 @@ namespace TixtlySW.Areas.Cliente.Controllers
 
                 if (evento == null)
                 {
-                    // Si no se encuentra el evento, puedes redirigir a una vista de error o mostrar un mensaje
+                    // Si no se encuentra el evento, 
                     return NotFound(); // Retorna un error 404
                 }
 
@@ -154,7 +154,7 @@ namespace TixtlySW.Areas.Cliente.Controllers
                 Console.WriteLine("Error en BuscarBoleto: " + ex.Message);
                 return StatusCode(500, "Ocurrió un error interno. Por favor, inténtelo de nuevo más tarde.");
             }
-        }
+        }//termina el buscar boleto 
 
 
     }//termina la clase publica 

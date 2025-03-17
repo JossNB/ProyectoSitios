@@ -2,7 +2,7 @@
 
 @{
     Layout = null;
-    var sectoresAsientos = ViewBag.SectoresAsientos as List<CantidadSectoresAsientos>;
+   
 }
 
 <!DOCTYPE html>
@@ -56,12 +56,13 @@
                 <p>Escenario</p>
             </div>
             <div class="sectores">
-                @if (sectoresAsientos != null && sectoresAsientos.Any())
+                @if (Model.SectoresAsientos != null && Model.SectoresAsientos.Any())
                 {
-                    foreach (var sector in sectoresAsientos)
+                    foreach (var sector in Model.SectoresAsientos)
                     {
                         <div class="sector" data-sector="@sector.IDSector">
-                            <h3>Sector @sector.IDSector</h3>
+                            <h3>Sector @sector.NombreBloque</h3>
+                            <p>@sector.Precio</p>
                             <div class="asientos" id="asientos-@sector.IDSector">
                                 @for (int fila = 1; fila <= sector.CantidadFilas; fila++)
                                 {
