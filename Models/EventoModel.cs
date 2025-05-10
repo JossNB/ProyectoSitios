@@ -17,6 +17,7 @@
 
         public string Estado { get; set; }
 
+        public byte[] Imagen { get; set; }
         public string ImagenUrl { get; set; }
 
         public string NombreLugar { get; set; }

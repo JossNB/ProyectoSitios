@@ -1,0 +1,113 @@
+﻿@model TixtlySW.Models.EventoBoletoViewModel
+@{
+    ViewData["Title"] = "Detalles del Evento";
+    Layout = null; // Puedes eliminar esta línea si usas un layout
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TixTly - Eventos</title>
+	<link href="~/css/styleinfoboletos.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <!-- Logo con enlace a Index.cshtml -->
+            <a asp-controller="Home" asp-action="Index">
+                <img id="logo" src="/img/logo.jpeg" alt="Tixtly" style="width: 85px; height: auto;">
+            </a>
+
+            <input type="text" placeholder="Buscar eventos...">
+            <button class="buscar">BUSCAR</button>
+            <div class="perfil">NOMBRE</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Conciertos</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Teatro</a></li>
+                <li><a href="#">Comedia</a></li>
+                <li><a href="#">Culturales</a></li>
+                <li><a href="#">Familiares</a></li>
+                <li><a href="#">Congresos</a></li>
+                <li><a href="#">Festivales</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="panel-Image">
+        <img src="@Model.Evento.ImagenUrl" alt="@Model.Evento.Titulo">
+    </div>
+
+    <div class="panel-info">
+        <h3>@Model.Evento.Titulo</h3>
+        <label>
+        </label>
+        @Model.Evento.FechaInicio
+        <label>
+
+        </label>
+        @Model.Evento.NombreLugar
+        <label>
+
+        </label>
+       @Model.Evento.DireccionLugar
+        <label>
+
+        </label>
+    </div>
+
+    <div class="tabla">
+        <!-- Encabezado de la tabla -->
+        <div class="fila encabezado">
+            <span>Sector</span>
+            <span>Precio</span>
+            <span>Disponibilidad</span>
+        </div>
+
+        <!-- Verificar si hay boletos disponibles -->
+        @if (Model.Boletos == null || !Model.Boletos.Any())
+        {
+            <div class="fila">
+                <span>No hay boletos disponibles para este evento.</span>
+            </div>
+        }
+        else
+        {
+            <!-- Filas dinámicas generadas desde la lista Boletos -->
+            @foreach (var boleto in Model.Boletos)
+            {
+                <div class="fila">
+                    <span><b>@boleto.NombreSector</b></span>
+                    <span>₡ @boleto.Precio.ToString("N2")</span>
+                    <span class="disponibilidad">
+                        <span class="dot @(boleto.Disponibles > 0 ? "green" : "red")"></span>
+                    </span>
+                </div>
+            }
+        }
+    </div>
+
+    <div class="contenedor-estado">
+        <div class="fila-Disponible">
+            <span class="dot green"></span>
+            <label>Disponible</label>
+        </div>
+        <div class="fila-NoD">
+            <span class="dot red"></span>
+            <label>No Disponible</label>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a asp-action="BuscarBoleto" asp-route-eventoId="@Model.Evento.EventoID" class="confirm">COMPRAR BOLETOS</a>
+        <!-- <button class="confirm">COMPRAR BOLETOS</button> -->
+    </div>
+    <footer>
+        <p>¡Somos TixTly!</p>
+        <p>Transferencias Seguras | Entradas 100% digitales</p>
+        <p>Contacto: servicio_cliente@tixtly.com | +506 70-40-65-89</p>
+    </footer>
+</body>
+</html>

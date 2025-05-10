@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\views\\eventoscliente\\buscarboleto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:views\\eventoscliente\\buscarboleto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|c:\\users\\katherine\\source\\repos\\proyectositios\\wwwroot\\css\\buscarboletostyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2DFD10E-AEE6-4646-9888-A02CABE3AA42}|TixtlySW.csproj|solutionrelative:wwwroot\\css\\buscarboletostyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +39,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BuscarBoleto.cshtml",
+              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Views\\EventosCliente\\BuscarBoleto.cshtml",
+              "RelativeDocumentMoniker": "Views\\EventosCliente\\BuscarBoleto.cshtml",
+              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\Views\\EventosCliente\\BuscarBoleto.cshtml",
+              "RelativeToolTip": "Views\\EventosCliente\\BuscarBoleto.cshtml",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAAAGMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T05:30:35.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "buscarboletostyle.css",
+              "DocumentMoniker": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\wwwroot\\css\\buscarboletostyle.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\buscarboletostyle.css",
+              "ToolTip": "C:\\Users\\Katherine\\source\\repos\\ProyectoSitios\\wwwroot\\css\\buscarboletostyle.css",
+              "RelativeToolTip": "wwwroot\\css\\buscarboletostyle.css",
+              "ViewState": "AQIAAIgAAAAAAAAAAAAAwKMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-17T05:29:43.288Z",
+              "EditorCaption": ""
             }
           ]
         },

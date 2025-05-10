@@ -47,3 +47,11 @@ Thumbs.db
 *.sln.iml
 
 obj/
+/wwwroot/img/Edificaciones/Pedregal.jpg
+/wwwroot/img/Edificaciones/TeatroNacional.jpg
+/wwwroot/img/Eventos/CamilaTour.jpg
+/wwwroot/img/Edificaciones/ParqueViva.jpg
+/wwwroot/img/Edificaciones/PalacioDeportes.jpg
+/wwwroot/img/Edificaciones/EstadioNacional.jpg
+/wwwroot/img/Edificaciones/ClubPeppers.jpg
+/wwwroot/img/Eventos/Incubus.jpg

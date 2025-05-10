@@ -1,6 +1,9 @@
-﻿
+﻿@model List<EventoModel>
+
 @{
     Layout = null;
+    
+    
 }
 
 <!DOCTYPE html>
@@ -11,13 +14,18 @@
     <title>TixTly - Eventos</title>
 	<link href="~/css/stylesfiltrareventos.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
 </head>
 <body>
     <header>
         <div class="header-top">
-            <div class="logo">TIXTLY</div>
+            <!-- Logo con enlace a Index.cshtml -->
+            <a asp-controller="Home" asp-action="Index">
+                <img id="logo" src="/img/logo.jpeg" alt="Tixtly" style="width: 85px; height: auto;">
+            </a>
+
             <input type="text" placeholder="Buscar eventos...">
             <button class="buscar">BUSCAR</button>
             <div class="perfil">NOMBRE</div>
@@ -37,34 +45,52 @@
     </header>
 
     <section class="filtros">
-        <select>
-            <option selected hidden>Categoría</option>
-            <option>Todas</option>
-            <option>Conciertos</option>
-            <option>Deportes</option>
-            <option>Teatro</option>
-        </select>
-        <select>
-            <option selected hidden>Lugar</option>
-            <option>San José</option>
-            <option>Heredia</option>
-            <option>Alajuela</option>
-        </select>
+        <form id="formFiltros">
+            <select id="filtroCategoria" name="categoria">
+                <option selected hidden>Categoría</option>
+                <option value="">Todas</option>
+                <option value="21">Conciertos</option>
+                <option value="31">Deportes</option>
+                <option value="32">Teatro</option>
+                <option value="33">Comedia</option>
+                <option value="34">Culturales</option>
+                <option value="35">Familiares</option>
+                <option value="36">Congresos</option>
+                <option value="37">Festivales</option>
+            </select>
+            <select id="filtroLugar">
+                <option selected hidden>Lugar</option>
+                <option value="">Todos</option>
+                <option value="San Jose">San Jose</option>
+                <option value="Heredia">Heredia</option>
+                <option value="Alajuela">Alajuela</option>
+                <option value="Cartago">Cartago</option>
+                <option value="Limón">Limón</option>
+                <option value="Guanacaste">Guanacaste</option>
+                <option value="Puntarenas">Puntarenas</option>
+            </select>
 
-        <input type="text" id="fechaInput" placeholder="Seleccionar fecha" readonly onclick="abrirModal()">
-        <select>
-            <option selected hidden>Precio</option>
-            <option>De 10000 a 25000 colones</option>
-            <option>De 25000 a 50000 colones</option>
-            <option>De 50000 a 75000 colones</option>
-            <option>De 75000 a 100000 colones</option>
-            <option>De 100000 colones a mas</option>
-        </select>
+            <input type="text" id="fechaInput" placeholder="Seleccionar fecha" readonly onclick="abrirModal()">
+            <select id="filtroPrecio">
+                <option selected hidden>Precio</option>
+                <option value="De 10000 a 25000 colones">De 10000 a 25000 colones</option>
+                <option value="De 25000 a 50000 colones">De 25000 a 50000 colones</option>
+                <option value="De 50000 a 75000 colones">De 50000 a 75000 colones</option>
+                <option value="De 75000 a 100000 colones">De 75000 a 100000 colones</option>
+                <option value="De 100000 colones a mas">De 100000 colones a mas</option>
+            </select>
+            <!-- Botón para activar la funcion de buscar del js -->
+            <button type="button" class="buscar-filtros">Buscar</button>
+            <!-- Botón para reestablecer los filtros -->
+            <button type="button" class="reestablecer-filtros">Reestablecer</button>
+        </form>
     </section>
+
     <div id="modalFecha" class="modal">
         <div class="modal-contenido">
             <label>Fecha de Inicio:</label>
             <input type="date" id="fechaInicio">
+            <br>
             <label>Fecha de Fin:</label>
             <input type="date" id="fechaFin">
             <div class="modal-botones">
@@ -73,39 +99,29 @@
             </div>
         </div>
     </div>
+
     <section class="eventos">
         <h2>Eventos</h2>
         <div class="eventos-grid">
-            <div class="evento">
-                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 1">
-
-                <button>VER EVENTO</button>
-            </div>
-            <div class="evento">
-                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 2">
-
-                <button>VER EVENTO</button>
-            </div>
-            <div class="evento">
-                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 3">
-
-                <button>VER EVENTO</button>
-            </div>
-            <div class="evento">
-                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 4">
-
-                <button>VER EVENTO</button>
-            </div>
-            <div class="evento">
-                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 5">
-
-                <button>VER EVENTO</button>
-            </div>
-            <div class="evento">
-                <img src="https://cdn.eticket.cr/imagenes/artistas/241015105734257_performer_img2_550x385.jpg" alt="Evento 6">
-
-                <button>VER EVENTO</button>
-            </div>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <div class="evento">
+                        <img src="@item.ImagenUrl" alt="@item.Titulo" />
+                        <p class="titulo">@item.Titulo</p>
+                        <p class="descripcion">@item.Descripcion</p>
+                        <a asp-action="ObtenerEventoid" asp-route-eventoId="@item.EventoID" class="btn-ver-evento">VER EVENTO</a>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="no-eventos">
+                    <i class="fas fa-calendar-times fa-3x"></i>
+                    <p>No se encontraron elementos.</p>
+                </div>
+            }
         </div>
     </section>
 

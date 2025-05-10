@@ -3,7 +3,13 @@ body {
     background-color: black;
     color: white;
     text-align: center;
+    background-image: url('../img/fondopantalla.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
 }
+
 header {
     background-color: #adff44;
     padding: 10px;
@@ -11,16 +17,27 @@ header {
     flex-direction: column;
     position: relative;
 }
+
 .header-top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 10px;
+    padding: 2px;
 }
-nav ul a{
+
+/* Estilos específicos para el logo */
+ .header-top #logo {
+  width: 30px; /* Ajusta este valor según sea necesario */
+  height: auto; /* Mantiene la proporción */
+  max-height: 40px; /* Limita la altura máxima */
+}
+
+nav ul a {
     text-decoration: none;
     color: #222;
 }
+
 nav ul {
     list-style: none;
     display: flex;
@@ -30,68 +47,162 @@ nav ul {
     background-color: #adff44;
     left: 0; /* Alinea el menú a la izquierda */
 }
+
 nav li {
     margin: 0 10px;
 }
+
 .filtros {
     display: flex;
     justify-content: center;
     padding: 10px;
     color: white;
 }
-.filtros select, .filtros input {
-    margin: 5px;
-    padding: 10px;
+
+.filtros select,
+.filtros input {
+     margin: 5px;
+     padding: 10px;
+    }
+
+.buscar-filtros {
+    background-color: #adff44; /* Color de fondo */
+    color: black; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
 }
+
+ .buscar-filtros:hover {
+    background-color: white; /* Cambia el color al pasar el mouse */
+  }
+
+.reestablecer-filtros {
+    background-color: #ff4d4d; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+}
+
+    .reestablecer-filtros:hover {
+        background-color: #cc0000; /* Cambia el color al pasar el mouse */
+    }
+
+
 .eventos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
 }
+
 .evento {
-    background-color: #adff44;
-    padding: 10px;
+    background-color: black;
+    border: 1px solid #ddd;
     border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.evento img {
-    width: 100%;
+
+ .evento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+    .evento img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+
+.titulo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
 }
+
+.descripcion {
+    color: white;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.evento .btn-ver-evento {
+    background-color: #adff44;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+    .evento .btn-ver-evento:hover {
+        background-color: #0056b3;
+    }
+
+.no-eventos {
+    text-align: center;
+    font-size: 1.2em;
+    color: #888;
+    padding: 20px;
+}
+
+    .no-eventos i {
+        margin-bottom: 10px;
+        color: #ccc;
+    }
+
+
 
 footer {
     background-color: #222;
     padding: 20px;
     margin-top: 20px;
 }
+
 .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
-    }
-    .modal-contenido {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        color: black;
-    }
-    .modal-botones {
-        margin-top: 10px;
-    }
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+}
+
+.modal-botones {
+    margin-top: 10px;
+}
+
     .modal-botones button {
         margin: 5px;
         padding: 10px;
         cursor: pointer;
     }
-  
-    #fechaInput {
-        cursor: pointer;
-        padding: 10px;
-        width: 150px;
-    }
+
+#fechaInput {
+    cursor: pointer;
+    padding: 10px;
+    width: 150px;
+}
